@@ -1,0 +1,53 @@
+<!--<idea-plugin>-->
+    <!--<id>sam58.enovia_deploy</id>-->
+    <!--<name>Plugin display name here</name>-->
+    <!--<vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>-->
+
+    <!--<description><![CDATA[-->
+    <!--Enter short description for your plugin here.<br>-->
+    <!--<em>most HTML tags may be used</em>-->
+    <!--]]></description>-->
+
+    <!--&lt;!&ndash; please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html-->
+         <!--on how to target different products &ndash;&gt;-->
+    <!--&lt;!&ndash; uncomment to enable plugin in all products-->
+    <!--<depends>com.intellij.modules.lang</depends>-->
+    <!--&ndash;&gt;-->
+
+    <!--<extensions defaultExtensionNs="com.intellij">-->
+        <!--&lt;!&ndash; Add your extensions here &ndash;&gt;-->
+    <!--</extensions>-->
+
+    <!--<actions>-->
+        <!--&lt;!&ndash; Add your actions here &ndash;&gt;-->
+    <!--</actions>-->
+<!--</idea-plugin>-->
+<idea-plugin>
+    <id>org.jetbrains</id>
+    <name>Hello Action Project</name>
+    <version>0.0.1</version>
+    <vendor email="dummy" url="dummy">dummy</vendor>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+    <actions>
+        <action class="actions.MxUpdate" id="sam58.enovia_deploy.actions.MxUpdate"
+                text="MxUpdate" description="Setup .mxu files by mxUpdate tools. ">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+
+        </action>
+
+    </actions>
+
+
+
+    <!--<actions>-->
+        <!--<group id="MyPlugin.SampleMenu" text="Greeting" description="Greeting menu">-->
+            <!--<add-to-group group-id="MainMenu" anchor="last"/>-->
+            <!--<action id="Myplugin.Textboxes" class="HelloAction" text="Hello" description="Says hello"/>-->
+        <!--</group>-->
+    <!--</actions>-->
+
+</idea-plugin>
