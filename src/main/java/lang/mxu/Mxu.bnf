@@ -1,0 +1,18 @@
+{
+    parserClass="lang.mxu.MxuParser"
+
+      extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+      psiClassPrefix="Mxu"
+      psiImplClassSuffix="Impl"
+      psiPackage="lang.mxu.psi"
+      psiImplPackage="lang.mxu.psi.impl"
+
+
+      elementTypeHolderClass="lang.mxu.psi.MxuTypes"
+      elementTypeClass="lang.mxu.psi.MxuElementType"
+      tokenTypeClass="lang.mxu.psi.MxuTokenType"
+}
+
+mxuFile ::= item_*
+private item_ ::= (property|COMMENT|CRLF)
+property ::= (KEY? SEPARATOR VALUE?) | KEY

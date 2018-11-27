@@ -30,6 +30,13 @@
 
     <depends>com.intellij.modules.lang</depends>
 
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileTypeFactory implementation="lang.mxu.MxuFileTypeFactory"/>
+        <lang.parserDefinition language="Mxu" implementationClass="lang.mxu.MxuParserDefinition"/>
+    </extensions>
+
     <extensions defaultExtensionNs="com.intellij">
     </extensions>
     <actions>

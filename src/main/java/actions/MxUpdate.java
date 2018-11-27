@@ -35,8 +35,8 @@ public class MxUpdate extends AnAction {
     public void update(AnActionEvent e) {
         //perform action if and only if EDITOR != null т.е я в редакторе
         boolean enabled = e.getData(CommonDataKeys.EDITOR) != null;
-        //TODO: перевести на custom language
-        VirtualFile vFile = e.getDataContext().getData(CommonDataKeys.VIRTUAL_FILE);//временное решение. Надо действовать через тип файла - custom language
+        //TODO: перевести на custom lang
+        VirtualFile vFile = e.getDataContext().getData(CommonDataKeys.VIRTUAL_FILE);//временное решение. Надо действовать через тип файла - custom lang
         enabled  = enabled && "mxu".equalsIgnoreCase(vFile.getExtension());
         e.getPresentation().setEnabled(enabled);//Активен или нет пункт
       }
