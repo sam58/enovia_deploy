@@ -1,3 +1,5 @@
+package sam58.enovia_deploy;
+
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;

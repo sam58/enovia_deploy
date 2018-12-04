@@ -1,4 +1,4 @@
-package actions;
+package sam58.enovia_deploy.actions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -22,8 +22,6 @@ public class MxUpdate extends AnAction {
         //TODO:Убрать в настройки и конструировать из них.
         VirtualFile vFile = event.getDataContext().getData(CommonDataKeys.VIRTUAL_FILE);//в
         //конструирую строку запуска
-
-
     }
 
     /**
@@ -35,8 +33,8 @@ public class MxUpdate extends AnAction {
     public void update(AnActionEvent e) {
         //perform action if and only if EDITOR != null т.е я в редакторе
         boolean enabled = e.getData(CommonDataKeys.EDITOR) != null;
-        //TODO: перевести на custom language
-        VirtualFile vFile = e.getDataContext().getData(CommonDataKeys.VIRTUAL_FILE);//временное решение. Надо действовать через тип файла - custom language
+        //TODO: перевести на custom sam58.enovia_deploy.language
+        VirtualFile vFile = e.getDataContext().getData(CommonDataKeys.VIRTUAL_FILE);//временное решение. Надо действовать через тип файла - custom sam58.enovia_deploy.language
         enabled  = enabled && "mxu".equalsIgnoreCase(vFile.getExtension());
         e.getPresentation().setEnabled(enabled);//Активен или нет пункт
       }
