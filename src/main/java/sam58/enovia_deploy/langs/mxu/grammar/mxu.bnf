@@ -1,0 +1,20 @@
+{
+   parserClass="sam58.enovia_deploy.langs.mxu.psi.MxuParser"
+   parserUtilClass="sam58.enovia_deploy.langs.mxu.psi.MxuParserUtil"
+   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+   psiClassPrefix="Mxu"
+   psiImplClassSuffix="Impl"
+   psiPackage="sam58.enovia_deploy.langs.mxu.psi"
+   psiImplPackage="sam58.enovia_deploy.langs.mxu.psi.impl"
+
+   elementTypeHolderClass="sam58.enovia_deploy.langs.mxu.psi.MxuTypes"
+   elementTypeClass="sam58.enovia_deploy.langs.mxu.psi.MxuElementType"
+   tokenTypeClass="sam58.enovia_deploy.langs.mxu.psi.MxuTokenType"
+
+}
+File ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY

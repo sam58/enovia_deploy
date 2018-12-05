@@ -1,14 +1,14 @@
-package lang.mxu.psi;
+package sam58.enovia_deploy.langs.mxu.psi;
 
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
-import lang.mxu.MxuFileType;
-import lang.mxu.MxuLanguage;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import javax.swing.*;
+import sam58.enovia_deploy.langs.mxu.MxuFileType;
+import sam58.enovia_deploy.langs.mxu.MxuLanguage;
+import javax.swing.Icon;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MxuFile extends PsiFileBase {
 
@@ -27,9 +27,10 @@ public class MxuFile extends PsiFileBase {
         return "Mxu File";
     }
 
-    @Nullable
     @Override
     public Icon getIcon(int flags) {
+        Map m = new HashMap<String,String>();
         return super.getIcon(flags);
+
     }
 }

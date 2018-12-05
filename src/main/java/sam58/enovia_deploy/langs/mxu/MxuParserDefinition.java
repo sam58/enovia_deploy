@@ -1,4 +1,4 @@
-package lang.mxu;
+package sam58.enovia_deploy.langs.mxu;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.ParserDefinition;
@@ -11,16 +11,16 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.TokenType;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
-import lang.mxu.psi.MxuFile;
-
 import org.jetbrains.annotations.NotNull;
+import sam58.enovia_deploy.langs.mxu.psi.MxuFile;
 
 
-public class MxuParserDefinition implements ParserDefinition {
+public class MxuParserDefinition  implements ParserDefinition {
 
-    public static final TokenSet WHITE_SPACES = TokenSet.create(TokenType.WHITE_SPACE);
-    public static final TokenSet COMMENTS = TokenSet.create(gen.lang.mxu.psi.MxuTypes.COMMENT);
+
     public static final IFileElementType FILE = new IFileElementType(MxuLanguage.INSTANCE);
+//    public static final TokenSet COMMENTS = TokenSet.create(MxuTypes.END_OF_LINE_COMMENT);
+//    public static final TokenSet WHITE_SPACES = TokenSet.create(MxuTypes.WHITE_SPACE);
 
     @NotNull
     @Override
@@ -30,12 +30,14 @@ public class MxuParserDefinition implements ParserDefinition {
 
     @NotNull
     public TokenSet getWhitespaceTokens() {
-        return WHITE_SPACES;
+        return null;
+ //       return WHITE_SPACES;
     }
 
     @Override
     public PsiParser createParser(Project project) {
-        return new gen.lang.mxu.MxuParser();
+        return null;
+      //  return new MxuParser();
     }
 
     @Override
@@ -46,7 +48,8 @@ public class MxuParserDefinition implements ParserDefinition {
     @NotNull
     @Override
     public TokenSet getCommentTokens() {
-        return COMMENTS;
+        return null;
+       // return COMMENTS;
     }
 
     @NotNull
@@ -58,16 +61,12 @@ public class MxuParserDefinition implements ParserDefinition {
     @NotNull
     @Override
     public PsiElement createElement(ASTNode node) {
-        return gen.lang.mxu.psi.MxuTypes.Factory.createElement(node);
+        return null;
+        //return MxuTypes.Factory.createElement(node);
     }
 
     @Override
     public PsiFile createFile(FileViewProvider viewProvider) {
         return new MxuFile(viewProvider);
-    }
-
-    @Override
-    public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
-        return SpaceRequirements.MAY;
     }
 }

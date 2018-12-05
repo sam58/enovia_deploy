@@ -1,13 +1,14 @@
-package lang.mxu;
+package sam58.enovia_deploy.langs.mxu;
 
 import com.intellij.lang.Language;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.Icon;
 
 public class MxuFileType extends LanguageFileType {
+
     public static final MxuFileType INSTANCE = new MxuFileType();
 
     public MxuFileType() {
@@ -17,13 +18,13 @@ public class MxuFileType extends LanguageFileType {
     @NotNull
     @Override
     public String getName() {
-        return "Mxu file";
+        return ".mxu file";
     }
 
     @NotNull
     @Override
     public String getDescription() {
-        return "Mxu language file";
+        return "mxUpdate file";
     }
 
     @NotNull
@@ -35,6 +36,6 @@ public class MxuFileType extends LanguageFileType {
     @Nullable
     @Override
     public Icon getIcon() {
-        return MxuIcons.FILE;
+        return MxuIcons.MXU_ICON;
     }
 }

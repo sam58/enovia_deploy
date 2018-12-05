@@ -1,13 +1,19 @@
-package actions;
+package sam58.enovia_deploy.actions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.fileTypes.FileTypeFactory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import sam58.enovia_deploy.langs.mxu.MxuFileTypeFactory;
 
 public class MxUpdate extends AnAction {
+
+
+    FileTypeFactory fileTypeFactory;
 
     public MxUpdate() {
         super("mxUpdate");
@@ -21,13 +27,14 @@ public class MxUpdate extends AnAction {
         StringBuffer dlgMsg = new StringBuffer(event.getPresentation().getText() + " Selected!");
         //TODO:Убрать в настройки и конструировать из них.
         VirtualFile vFile = event.getDataContext().getData(CommonDataKeys.VIRTUAL_FILE);//в
-        //конструирую строку запуска
-
+       //конструирую строку запуска
+        Messages.showMessageDialog(project, "Hello mx2Update! \n"+vFile.getPath(), "Greeting", Messages.getInformationIcon());
 
     }
 
     /**
-     * Выполняет провертку доступно ли применение
+     * Выполняет провертку на активность пункта меню в зависимости от того в нужном ли файле нахожусь
+     * проверка по расширению
      *
      * @param e
      */
@@ -35,8 +42,11 @@ public class MxUpdate extends AnAction {
     public void update(AnActionEvent e) {
         //perform action if and only if EDITOR != null т.е я в редакторе
         boolean enabled = e.getData(CommonDataKeys.EDITOR) != null;
-        //TODO: перевести на custom lang
-        VirtualFile vFile = e.getDataContext().getData(CommonDataKeys.VIRTUAL_FILE);//временное решение. Надо действовать через тип файла - custom lang
+        //TODO: перевести на custom sam58.enovia_deploy.langs ?
+        //Проверяем для mxu
+
+
+        VirtualFile vFile = e.getDataContext().getData(CommonDataKeys.VIRTUAL_FILE);//временное решение? Надо действовать через тип файла - custom sam58.enovia_deploy.langs ?
         enabled  = enabled && "mxu".equalsIgnoreCase(vFile.getExtension());
         e.getPresentation().setEnabled(enabled);//Активен или нет пункт
       }
